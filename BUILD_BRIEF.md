@@ -51,6 +51,7 @@ Per AGENTS.md step 3, this build covers both locations honestly (a Torquay entry
 | Gradings 7 March 2026 (Sandan/Nidan/Shodan) and 20 June 2026 (Little Warriors stripes); English Karate Federation 38th Annual Competition results (Joe Magor silver/bronze, Oscar Magor gold) | http://karateacademy.co.uk/grading_results_34.html and karate_black_belts_21.html | classes.html recent gradings |
 | Testimonials: Terry O'Neill (7th Dan, Merseyside), Andy (visiting club), Dave Cook sensei (shodan, Cornwall) | http://karateacademy.co.uk/what-they-say.html | Home testimonials |
 | Uniform (gi) costs under £25; no uniform needed to start; no obligation to compete; typical class structure | http://karateacademy.co.uk/karate_faqs_6.html | classes.html FAQ |
+| "Traditional Shotokan Karate" — the style of karate the business practices, noted for its strength and dynamism | http://karateacademy.co.uk/enjoy_karate_4.html, karate_23.html, self_defence_2.html, what-they-say.html | Site-wide: title tag, meta description, home hero eyebrow/lede, footer tagline on all 3 pages |
 
 ## Do Not Claim
 | Claim or uncertainty | Reason |
