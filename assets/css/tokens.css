@@ -1,0 +1,78 @@
+/*
+ * Design tokens — Karate Academy (Newton Abbot & Torquay)
+ *
+ * Palette rationale: this club's own strongest verified asset is a photo of
+ * chief instructor John Burke at a Ryukyu/Okinawan shrine with his teacher
+ * Hokama Tetsuhiro Hanshi (assets/img/okinawa-training.jpg) — indigo-blue
+ * curtain, weathered dark timber, and a red-lacquer/vermillion roof seal.
+ * Built the palette from that real photo rather than a generic "karate
+ * red/black" template, and checked it against every other sibling project's
+ * palette (iskf-hampstead-karate anchors on ink-black + warm gold + sparse
+ * crimson — this deliberately uses a cooler indigo ink and a hotter
+ * vermillion instead of gold, so the two clubs don't read as reskins).
+ *   - tide (deep indigo-navy): the curtain in that photo, and Devon's coast
+ *     at dusk (the club also trains on a Torbay beach — see
+ *     beach-black-belts.jpg).
+ *   - shu (vermillion/lacquer red): the red seal and roof trim in the same
+ *     photo — traditional Japanese shrine lacquer, used sparingly as an
+ *     accent, never a body-text color at small sizes.
+ *   - sand (warm stone/sand paper): Devon beach sand, a warmer neutral than
+ *     clinical white.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Tide — primary ink. Text, headings, nav, dark sections. */
+  --color-tide: #161c2b;           /* deep indigo-navy, near-black */
+  --color-tide-light: #333d54;     /* secondary text on paper, still >8:1 */
+  --color-tide-deep: #0a0d15;      /* footer/hero scrim, deepest dark */
+
+  /* Shu — vermillion accent. CTAs, underlines, eyebrows, grade tags. */
+  --color-shu: #b3401f;            /* base vermillion */
+  --color-shu-deep: #8c3018;       /* text-safe shu on paper, ~5.6:1 */
+  --color-shu-pale: #f5ddd2;       /* pale tint for chips/badge backgrounds */
+  --color-shu-bright: #e2703f;     /* brighter shu for accents on dark ink bg */
+
+  /* Jade — sparse secondary, literal callback to the dojo mat colour. */
+  --color-jade: #3f5d4f;
+  --color-jade-deep: #2c4238;
+
+  /* Sand — backgrounds. */
+  --color-sand: #f4eee1;           /* page background, warm sand */
+  --color-sand-deep: #e8ddc7;      /* secondary panel background */
+  --color-sand-white: #fffcf5;     /* cards/surfaces raised above sand */
+
+  /* Semantic aliases */
+  --bg: var(--color-sand);
+  --bg-deep: var(--color-sand-deep);
+  --surface: var(--color-sand-white);
+  --text: var(--color-tide);
+  --text-muted: var(--color-tide-light);
+  --brand: var(--color-tide);
+  --accent: var(--color-shu-deep);
+  --accent-bright: var(--color-shu-bright);
+
+  /* Derived hover/tint states from the single accent color */
+  --accent-hover: color-mix(in srgb, var(--color-shu-deep) 85%, black);
+  --accent-tint: color-mix(in srgb, var(--color-shu) 14%, var(--bg));
+
+  /* Type */
+  --font-display: "Bitter", Georgia, "Times New Roman", serif;
+  --font-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius: 4px;
+  --shadow-sm: 0 1px 3px rgba(10, 13, 21, 0.14);
+  --shadow-md: 0 8px 24px rgba(10, 13, 21, 0.18);
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-shu-deep) transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
