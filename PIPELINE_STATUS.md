@@ -2,8 +2,8 @@
 
 Operational handoff only. `LEADS.md` and `OUTREACH_LOG.md` remain the source of truth.
 
-- Current phase: **All 3 review issues fixed and independently re-verified — proceeding to deploy.**
-- Last trusted commit: fixes applied on top of the initial commit on this repo's `main` branch (see `git log`); not yet committed as of this status update — see next action.
+- Current phase: **Fixed, re-verified, and deployed. Outreach draft skipped — see below.**
+- Last trusted commit: `7b73f6a` "Fix hero contrast overlay paint order, source Shotokan claim, correct gradings qualifier" on this repo's `main` branch, pushed to `Plainset/karate-academy-newton-abbot-demo`.
 - Fixes applied (2026-07-11), all re-verified — see `QA_REPORT.md`'s "Fix Verification Pass" section for full evidence:
   1. `assets/css/styles.css` `.hero .container` — added `z-index: 1;` so the
      hero copy/media paint above `.hero::after`'s decorative overlay instead
@@ -25,15 +25,33 @@ Operational handoff only. `LEADS.md` and `OUTREACH_LOG.md` remain the source of 
     leaving `getComputedStyle()` untouched — it only inspects computed style
     and ancestor backgrounds. Future builds using a decorative `::before`/
     `::after` overlay must set explicit z-index so it stacks behind text.
-- Next exact action, in order:
-  1. Commit the fixes.
-  2. Re-run `.pipeline/qa/contrast-audit.js` and `.pipeline/qa/upscale-audit.js`
-     (done — see QA_REPORT.md, clean pass, 0 violations/broken images).
-  3. Deploy: create public GitHub repo `Plainset/karate-academy-newton-abbot-demo`,
-     push, enable Pages (source[branch]=main, source[path]=/), confirm live URL loads.
-  4. Draft outreach in `vdvalkproductions@gmail.com` only, per AGENTS.md step 7 — draft only, never send.
-- Deploy URL: pending this session's deploy step — see final report.
-- Outreach state: pending this session's draft step — see final report.
+- Deploy: **done.** Created public GitHub repo `Plainset/karate-academy-newton-abbot-demo`,
+  pushed `main`, enabled Pages (`source[branch]=main`, `source[path]=/`).
+  Build status polled until `built`; confirmed live with `curl` — index.html,
+  classes.html, contact.html all return HTTP 200, `<title>` matches expected
+  content.
+- Deploy URL: **https://plainset.github.io/karate-academy-newton-abbot-demo/**
+- Outreach state: **not drafted.** Before composing, attempted to confirm the
+  active signed-in Gmail account per the required "check the account
+  switcher" step. Both available means of doing that in this session were
+  permission-denied: the browser tool (`chrome-devtools new_page`, needed to
+  visually inspect the account switcher) and the Gmail MCP connector's own
+  read tool (`search_threads`, which could have at least confirmed the
+  authenticated mailbox indirectly). With neither available, there was no way
+  to confirm with high confidence that `vdvalkproductions@gmail.com` (and not
+  `alex.vdv0012@gmail.com` or `openclawsandbox96@gmail.com`) is the active
+  account, so per the explicit instruction, Gmail was not touched at all — no
+  draft was composed. This needs a human to either grant the browser-tool
+  permission or confirm the active account another way before outreach can be
+  drafted for this business.
+- Next exact action: a human (or a session with chrome-devtools/browser
+  permission granted) needs to confirm the active Gmail account, then draft
+  the outreach email per AGENTS.md step 7 / the exact template, to
+  `info@karateacademy.co.uk`, subject "Website idea for Karate Academy Ltd",
+  hook: both karateacademy.co.uk and karatenewtonabbot.com fail the HTTPS
+  handshake outright (browser "connection not private" warning) despite the
+  underlying site being a genuinely rich, actively-updated multi-page site.
+  Demo link: https://plainset.github.io/karate-academy-newton-abbot-demo/
 - Contact-email deviation: **independently confirmed safe to proceed on, twice
   over** (builder + independent reviewer). Re-fetched
   `http://karateacademy.co.uk/contact_us_13.html` live and confirmed
